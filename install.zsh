@@ -16,7 +16,7 @@ function abspath()
 }
 
 CONF_DIR="${0%/*}"
-FILES=(vim vimrc)
+FILES=(vim vimrc gvimrc)
 
 for item in $FILES; do
     src="${CONF_DIR}/${item}"
