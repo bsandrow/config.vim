@@ -22,6 +22,10 @@ for item in $FILES; do
     src="${CONF_DIR}/${item}"
     dest="${PREFIX}/.${item}"
     ln -v -sfn "$(abspath "$src")" "$dest"
+
+    if [[ ! -d vim/bundle/vundle ]]; then
+        git clone https://github.com/gmarik/vundle.git vim/bundle/vundle
+    fi
 done
 
 # vim:set ft=zsh:
