@@ -21,12 +21,17 @@ Bundle 'bogado/file-line'
 " Included in Vim since 6.0
 "Bundle 'vim-scripts/matchit.zip'
 
-
 " Colorschemes
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tomasr/molokai'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'shawncplus/skittles_berry'
+Bundle 'vim-scripts/Zenburn'
+Bundle 'vim-scripts/darktango.vim'
+Bundle 'vim-scripts/tango-morning.vim'
+Bundle 'vim-scripts/tango.vim'
+Bundle 'vim-scripts/mayansmoke'
+Bundle 'vim-scripts/win9xblueback.vim'
 
 " Vim Syntax files
 Bundle 'tmatilai/gitolite.vim'
