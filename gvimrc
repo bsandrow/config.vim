@@ -1,4 +1,5 @@
-colors solarized
+"colors solarized
+colors molokai
 set bg=dark
 
 if !has("gui_macvim")
