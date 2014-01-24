@@ -8,23 +8,44 @@ filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
-" Colorschemes
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'tomasr/molokai'
-
 Bundle 'gmarik/vundle'
+
 Bundle 'jlanzarotta/bufexplorer'
-Bundle 'puppetlabs/puppet-syntax-vim'
 Bundle 'tpope/vim-surround'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vimwiki/vimwiki'
+Bundle 'jamessan/vim-gnupg'
+Bundle 'bogado/file-line'
+"Bundle 'sjbach/lusty'
+
+" Included in Vim since 6.0
+"Bundle 'vim-scripts/matchit.zip'
+
+
+" Colorschemes
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tomasr/molokai'
+Bundle 'chriskempson/vim-tomorrow-theme'
+Bundle 'shawncplus/skittles_berry'
+
+" Vim Syntax files
+Bundle 'tmatilai/gitolite.vim'
+Bundle 'vim-scripts/moin.vim'
 Bundle 'groenewege/vim-less'
 Bundle 'nono/vim-handlebars'
 Bundle 'vim-scripts/nginx.vim'
-Bundle 'jamessan/vim-gnupg'
 
 " Enhanced Javascript Syntax support
 Bundle 'jelera/vim-javascript-syntax'
+
+" The puppetlabs Vim syntax file looks like it hasn't been updated since Jacob
+" left the company.
+"Bundle 'puppetlabs/puppet-syntax-vim'
+Bundle 'rodjek/vim-puppet'
+
+" An updated version of this:
+" http://www.vim.org/scripts/script.php?script_id=1945
+Bundle 'elzr/vim-json'
 
 " Note: There is an updated jinja.vim in the main jinja repo (under
 " ext/Vim/jinja.vim) that removes the need to also have htmljinja.vim, but
