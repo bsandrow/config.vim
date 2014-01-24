@@ -8,6 +8,10 @@ filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
+" Colorschemes
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tomasr/molokai'
+
 Bundle 'gmarik/vundle'
 Bundle 'jlanzarotta/bufexplorer'
 Bundle 'puppetlabs/puppet-syntax-vim'
@@ -18,9 +22,6 @@ Bundle 'groenewege/vim-less'
 Bundle 'nono/vim-handlebars'
 Bundle 'vim-scripts/nginx.vim'
 Bundle 'jamessan/vim-gnupg'
-
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'tomasr/molokai'
 
 " Enhanced Javascript Syntax support
 Bundle 'jelera/vim-javascript-syntax'
