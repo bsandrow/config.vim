@@ -16,6 +16,9 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'vimwiki/vimwiki'
 Bundle 'jamessan/vim-gnupg'
 Bundle 'bogado/file-line'
+Bundle 'vim-scripts/nose.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-commentary'
 "Bundle 'sjbach/lusty'
 
 " Included in Vim since 6.0
@@ -32,6 +35,34 @@ Bundle 'vim-scripts/tango-morning.vim'
 Bundle 'vim-scripts/tango.vim'
 Bundle 'vim-scripts/mayansmoke'
 Bundle 'vim-scripts/win9xblueback.vim'
+Bundle 'vim-scripts/ansi_blows.vim'
+Bundle 'vim-scripts/asu1dark.vim'
+Bundle 'vim-scripts/codeburn'
+Bundle 'vim-scripts/256-jungle'
+Bundle 'vim-scripts/Colorzone'
+Bundle 'vim-scripts/darkburn'
+Bundle 'vim-scripts/darkdot'
+Bundle 'vim-scripts/desert256.vim'
+Bundle 'vim-scripts/darkerdesert'
+Bundle 'vim-scripts/vylight'
+Bundle 'vim-scripts/twilight'
+Bundle 'vim-scripts/tango-desert.vim'
+Bundle 'vim-scripts/moria'
+Bundle 'vim-scripts/metacosm.vim'
+Bundle 'vim-scripts/matrix.vim'
+Bundle 'vim-scripts/lettuce.vim'
+Bundle 'vim-scripts/jellybeans.vim'
+Bundle 'vim-scripts/DesertedOceanBurnt'
+
+" Mising Colorschemes:
+"   - github.vim
+"   - ir_black.vim
+"   - twilight2.vim
+"   - gardener.vim
+"   - gentooish.vim
+"   - digerati.vim
+"   - CloudsMidnight.vim
+"   - DarkDefault.vim
 
 " Vim Syntax files
 Bundle 'tmatilai/gitolite.vim'
@@ -39,6 +70,7 @@ Bundle 'vim-scripts/moin.vim'
 Bundle 'groenewege/vim-less'
 Bundle 'nono/vim-handlebars'
 Bundle 'vim-scripts/nginx.vim'
+Bundle 'hdima/python-syntax'
 
 " Enhanced Javascript Syntax support
 Bundle 'jelera/vim-javascript-syntax'
