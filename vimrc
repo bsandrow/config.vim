@@ -33,7 +33,6 @@ Bundle 'vim-scripts/Zenburn'
 Bundle 'vim-scripts/darktango.vim'
 Bundle 'vim-scripts/tango-morning.vim'
 Bundle 'vim-scripts/tango.vim'
-Bundle 'vim-scripts/mayansmoke'
 Bundle 'vim-scripts/win9xblueback.vim'
 Bundle 'vim-scripts/ansi_blows.vim'
 Bundle 'vim-scripts/asu1dark.vim'
@@ -53,6 +52,9 @@ Bundle 'vim-scripts/matrix.vim'
 Bundle 'vim-scripts/lettuce.vim'
 Bundle 'vim-scripts/jellybeans.vim'
 Bundle 'vim-scripts/DesertedOceanBurnt'
+
+" My fork of vim-scripts/mayansmoke
+Bundle 'bsandrow/mayansmoke'
 
 " Mising Colorschemes:
 "   - github.vim
@@ -160,6 +162,9 @@ else
     set background=light
     colorscheme default
 endif
+
+" ~~ colorscheme settings ~~
+let g:mayansmoke_search_visibility = 2 " high visibility
 
 " ~~ Perl syntax ~~
 let perl_extended_vars = 1
