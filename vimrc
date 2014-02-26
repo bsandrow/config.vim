@@ -103,6 +103,8 @@ Bundle 'plasticboy/vim-markdown'
 filetype plugin indent on
 syntax on
 
+runtime! macros/matchit.vim
+
 " ===========================
 "         Settings
 " ===========================
