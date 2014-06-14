@@ -162,20 +162,13 @@ let g:ctrlp_custom_ignore = {
 noremap Y y$
 
 " ~~ colorscheme ~~
-if has("gui_running") && has("gui_macvim")
-    set background=light
-    colorscheme macvim
-else
-    set background=light
-    colorscheme default
-endif
+let g:mayansmoke_search_visibility = 2 " high visibility
+set background=dark
+colorscheme solarized
 
 " ~~ vimwiki ~~
 let g:vimwiki_list = [ { 'path': '~/vimwiki',
                      \ 'syntax': 'markdown', 'ext': '.md' } ]
-
-" ~~ colorscheme settings ~~
-let g:mayansmoke_search_visibility = 2 " high visibility
 
 " ~~ Perl syntax ~~
 let perl_extended_vars = 1
