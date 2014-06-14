@@ -216,6 +216,14 @@ command -bar -nargs=0 -range=% RemoveTrailingWhitespace <line1>,<line2>call Remo
 nnoremap <leader>rw :RemoveTrailingWhitespace<CR>
 vnoremap <leader>rw :RemoveTrailingWhitespace<CR>
 
+" ~~~~~~~~~~~~~
+" JSON Settings
+" ~~~~~~~~~~~~~
+augroup json_settings
+  autocmd!
+  autocmd FileType json setlocal sw=2 sts=2 ts=2 et " Only indent by 2 spaces
+augroup END
+
 " ~~ Load Local Settings ~~
 let g:local_vimrc = expand("$HOME/.vim/local.vim")
 if filereadable(g:local_vimrc)
