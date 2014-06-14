@@ -89,19 +89,21 @@ Bundle 'rodjek/vim-puppet'
 " http://www.vim.org/scripts/script.php?script_id=1945
 Bundle 'elzr/vim-json'
 
+Bundle 'vim-pandoc/vim-pandoc'
+
 " Note: There is an updated jinja.vim in the main jinja repo (under
 " ext/Vim/jinja.vim) that removes the need to also have htmljinja.vim, but
 " there isn't an easy Vundle for it, so this should suffice for the time
 " being.
 Bundle 'estin/htmljinja'
 
-" Markdown for Vim - There are two github repos. Currently the plasticboy one
-" was last updated 21 days ago, but tpope's one was last updated 4 months ago.
-" The plasticboy one sounds familiar (like I've seen/used it before), but
-" tpope has a _lot_ of excellent vim plugins, so it's not like he's some
-" no-name developer. plasticboy one seems more up-to-date, so I'll use it.
-Bundle 'plasticboy/vim-markdown'
-"Bundle 'tpope/vim-markdown'
+" Markdown for Vim
+" ~~~~~~~~~~~~~~~~
+" The plasticboy repo seems more often updated, but the tpope one is extended
+" by the vim-flavored-markdown plugin, so let's use the tpope one for now.
+"Bundle 'plasticboy/vim-markdown'
+Bundle 'tpope/vim-markdown'
+Bundle 'jtratner/vim-flavored-markdown'
 
 filetype plugin indent on
 syntax on
