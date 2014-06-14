@@ -74,7 +74,8 @@ Bundle 'vim-scripts/moin.vim'
 Bundle 'groenewege/vim-less'
 Bundle 'nono/vim-handlebars'
 Bundle 'vim-scripts/nginx.vim'
-Bundle 'hdima/python-syntax'
+"Bundle 'hdima/python-syntax'
+Bundle 'klen/python-mode'
 
 " Enhanced Javascript Syntax support
 Bundle 'jelera/vim-javascript-syntax'
