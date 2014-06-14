@@ -21,6 +21,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-commentary'
 "Bundle 'sjbach/lusty'
 
+
 " Included in Vim since 6.0
 "Bundle 'vim-scripts/matchit.zip'
 
@@ -52,6 +53,7 @@ Bundle 'vim-scripts/matrix.vim'
 Bundle 'vim-scripts/lettuce.vim'
 Bundle 'vim-scripts/jellybeans.vim'
 Bundle 'vim-scripts/DesertedOceanBurnt'
+Bundle 'endel/vim-github-colorscheme'
 
 " My fork of vim-scripts/mayansmoke
 Bundle 'bsandrow/mayansmoke'
