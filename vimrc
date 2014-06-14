@@ -170,6 +170,10 @@ else
     colorscheme default
 endif
 
+" ~~ vimwiki ~~
+let g:vimwiki_list = [ { 'path': '~/vimwiki',
+                     \ 'syntax': 'markdown', 'ext': '.md' } ]
+
 " ~~ colorscheme settings ~~
 let g:mayansmoke_search_visibility = 2 " high visibility
 
