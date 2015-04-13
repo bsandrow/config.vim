@@ -223,6 +223,14 @@ augroup sql_files
     autocmd FileType sql setlocal commentstring=--\ %s
 augroup END
 
+" ~~~~~~~~~~~~~~~~~
+" Markdown Settings
+" ~~~~~~~~~~~~~~~~~
+augroup markdown_extras
+    autocmd!
+    autocmd FileType vimwiki setlocal formatoptions+=cq
+augroup END
+
 " ~~~~~~~~~~~~~
 " YAML Settings
 " ~~~~~~~~~~~~~
