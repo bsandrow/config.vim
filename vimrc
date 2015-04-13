@@ -236,6 +236,15 @@ augroup vimwiki_extras
     autocmd BufRead,BufNewFile ~/vimwiki/* lcd ~/vimwiki
 augroup END
 
+augroup js_extras
+    autocmd!
+    autocmd FileType javascript setlocal sw=2 sts=2 ts=2 et
+    autocmd FileType html setlocal sw=2 sts=2 ts=2 et
+    autocmd FileType css setlocal sw=2 sts=2 ts=2 et
+    autocmd FileType less setlocal sw=2 sts=2 ts=2 et
+    autocmd FileType sass setlocal sw=2 sts=2 ts=2 et
+augroup END
+
 " ~~~~~~~~~~~~~
 " YAML Settings
 " ~~~~~~~~~~~~~
