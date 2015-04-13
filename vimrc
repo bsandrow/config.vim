@@ -231,6 +231,11 @@ augroup markdown_extras
     autocmd FileType vimwiki setlocal formatoptions+=cq
 augroup END
 
+augroup vimwiki_extras
+    autocmd!
+    autocmd BufRead,BufNewFile ~/vimwiki/* lcd ~/vimwiki
+augroup END
+
 " ~~~~~~~~~~~~~
 " YAML Settings
 " ~~~~~~~~~~~~~
