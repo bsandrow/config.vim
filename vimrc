@@ -26,6 +26,7 @@ Bundle 'tpope/vim-commentary'
 "Bundle 'vim-scripts/matchit.zip'
 
 " Colorschemes
+Bundle 'chriskempson/base16-vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tomasr/molokai'
 Bundle 'chriskempson/vim-tomorrow-theme'
