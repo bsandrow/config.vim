@@ -223,3 +223,6 @@ let g:local_vimrc = expand("$HOME/.vim/local.vim")
 if filereadable(g:local_vimrc)
     execute "source" . g:local_vimrc
 endif
+
+
+let g:pymode_rope = 0
