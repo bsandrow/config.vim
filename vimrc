@@ -223,6 +223,14 @@ augroup sql_files
     autocmd FileType sql setlocal commentstring=--\ %s
 augroup END
 
+" ~~~~~~~~~~~~~
+" YAML Settings
+" ~~~~~~~~~~~~~
+augroup yaml_settings
+    autocmd!
+    autocmd FileType yaml setlocal sw=2 sts=2 ts=2 et " Only indent by 2 spaces
+augroup END
+
 " ~~ Load Local Settings ~~
 let g:local_vimrc = expand("$HOME/.vim/local.vim")
 if filereadable(g:local_vimrc)
