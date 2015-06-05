@@ -23,6 +23,7 @@ Bundle 'bogado/file-line'
 Bundle 'vim-scripts/nose.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-commentary'
+Bundle 'Shutnik/jshint2.vim'
 "Bundle 'sjbach/lusty'
 
 
@@ -213,6 +214,11 @@ endfunction
 command -bar -nargs=0 -range=% RemoveTrailingWhitespace <line1>,<line2>call RemoveTrailingWhitespace()
 nnoremap <leader>rw :RemoveTrailingWhitespace<CR>
 vnoremap <leader>rw :RemoveTrailingWhitespace<CR>
+
+"
+" jshint2.vim plugin config
+"
+let jshint2_save = 1
 
 " ~~~~~~~~~~~~~
 " JSON Settings
