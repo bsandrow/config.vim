@@ -10,6 +10,9 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
+Bundle 'rking/ag.vim'
+Bundle 'mileszs/ack.vim'
+
 Bundle 'jlanzarotta/bufexplorer'
 Bundle 'tpope/vim-surround'
 Bundle 'kien/ctrlp.vim'
