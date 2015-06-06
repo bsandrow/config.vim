@@ -9,7 +9,7 @@ colors solarized | set bg=light
 " MacOSX / MacVim
 "
 if has('gui_macvim')
-    set guifont=Consolas:h11,Menlo:h11,Monaco:h11
+    set guifont=Menlo:h11,Monaco:h11,Consolas:h11
 endif
 
 "

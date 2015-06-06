@@ -10,10 +10,18 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
+" ===========================
+"          Search
+" ===========================
 Bundle 'rking/ag.vim'
 Bundle 'mileszs/ack.vim'
 
+" ===========================
+"         Buffers
+" ===========================
+let g:bufExplorerDisableDefaultKeyMapping = 1
 Bundle 'jlanzarotta/bufexplorer'
+
 Bundle 'tpope/vim-surround'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vimwiki/vimwiki'
@@ -116,28 +124,24 @@ syntax on
 
 runtime! macros/matchit.vim
 
-" ===========================
-"         Settings
-" ===========================
+"-------------------------------------------------------------------------------
+" Vim Settings
+"-------------------------------------------------------------------------------
 set expandtab tabstop=4 softtabstop=4 shiftwidth=4
 set bg=light
 set hidden
 set modelines=5
 set virtualedit=all
 set vb t_vb=    " disable visual/audible 'bells'
-
-" ~~ search ~~
 set hlsearch    " highlight all of the matches when searching
 set incsearch   " we want to see the first match before actually searching
 set ignorecase  " make searches case-insensitive by default
 set smartcase   " make searches case-sensitive if contains upper-case chars
-
 set nonumber
 set nowrap
 set noshowmatch
 set ruler
 set laststatus=2
-
 set list
 set listchars=tab:»·,trail:·
 
@@ -148,126 +152,153 @@ set listchars=tab:»·,trail:·
 "   http://vimrc-dissection.blogspot.com/2006/09/vim-7-re-turn-off-parenparenthesiswhat.html
 let loaded_matchparen = 1
 
-" Setup <Leader> and <LocalLeader> for keymaps
-let mapleader=","
-let maplocaleader=","
-
-" Let's not lose the functionality of ',', just remap it to ',,'
-nnoremap <leader>, :normal ,<CR>:<CR>
-
-noremap <Leader>bp :CtrlPBuffer<Return>
-
-let g:ctrlp_custom_ignore = {
-    \ 'dir': '\v[\/](node_modules|sowingo/web/static|sowingo/web/client/vendor|sowingo/was/client/vendor|sowingo/was/static)$',
-    \ 'file': '\v\.(pyc)$'
-    \ }
-
 " `Y` should match the behaviour of other operations like `D` and `C`, which
 " perform their operation from the cursor to the end of the line, rather then
 " `D` being an alias for `dd` (or `C` for `cc`).
-noremap Y y$
+nnoremap Y y$
 
 " ~~ colorscheme ~~
 let g:mayansmoke_search_visibility = 2 " high visibility
 set background=dark
 colorscheme solarized
 
-" ~~ vimwiki ~~
-let g:vimwiki_list = [ { 'path': '~/vimwiki',
-                     \ 'syntax': 'markdown', 'ext': '.md' } ]
+"-------------------------------------------------------------------------------
+" Vim Plugin Settings
+"-------------------------------------------------------------------------------
 
-" ~~ Perl syntax ~~
+"
+" VimWiki
+"
+let g:vimwiki_list = [
+  \ {'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}
+\]
+
+"
+" CtrlP
+"
+let g:ctrlp_custom_ignore = {
+    \ 'dir': '\v[\/](node_modules)$',
+    \ 'file': '\v\.(pyc)$'
+    \ }
+
+"
+" Perl
+"
 let perl_extended_vars = 1
 let perl_include_pod = 1
 let perl_string_as_statement = 1
 let perl_fold = 1
 let perl_nofold_packages = 1
 
-" ~~ Java syntax ~~
+" perl-support Plugin Settings:
+let g:Perl_Support_Root_Dir = $HOME . "/.vim/bundle/perl-support"
+
+" turn off the perl-support key mappings
+let g:Perl_NoKeyMappings=0
+
+" TODO disable the .pm file template (perl-support)
+" TODO disable the stupid { bracket delay (perl-support)
+
+"
+" Java
+"
 let java_space_errors = 1
 let java_ignore_javadoc = 1
 let java_highlight_functions = 1
-let java_allow_cpp_keywords = 1 " don't warn when using c++ keywords
 
-" ~~ Groovy syntax ~~
-let groovy_allow_cpp_keywords = 1 " don't warn when using c++ keywords in
-                                  " groovy
-
-" ~~ Shell Script syntax ~~
-let g:sh_fold_enabled = 1 " enable folding for shell file (Note: zsh filetype
-                          " doesn't have any folding)
-
-" ~~ perl-support plugin settings ~~
-"   todo: disable the .pm file template
-"   todo: disable the stupid { bracket delay
-let g:Perl_NoKeyMappings=0 " turn off the perl-support key mappings
-let g:Perl_Support_Root_Dir = $HOME . "/.vim/bundle/perl-support"
-
-" ~~ Remove Trailing Whitespace ~~
-"   ref: http://vim.wikia.com/wiki/Remove_unwanted_spaces
-function! RemoveTrailingWhitespace() range
-    if !&binary && &filetype != "diff"
-        execute a:firstline . "," . a:lastline . "s/\\s\\+$//ge"
-    endif
-    echomsg "trailing whitespace removed"
-endfunction
-command -bar -nargs=0 -range=% RemoveTrailingWhitespace <line1>,<line2>call RemoveTrailingWhitespace()
-nnoremap <leader>rw :RemoveTrailingWhitespace<CR>
-vnoremap <leader>rw :RemoveTrailingWhitespace<CR>
+" don't warn when using c++ keywords
+let java_allow_cpp_keywords = 1
 
 "
-" jshint2.vim plugin config
+" Vim Plugin: python-mode
 "
-let jshint2_save = 1
+let g:pymode_rope = 0
 
-" ~~~~~~~~~~~~~
-" JSON Settings
-" ~~~~~~~~~~~~~
-augroup json_settings
-  autocmd!
-  autocmd FileType json setlocal sw=2 sts=2 ts=2 et " Only indent by 2 spaces
-augroup END
+"
+" Vim Syntax: Groovy
+"
+" don't warn when using c++ keywords in groovy
+let groovy_allow_cpp_keywords = 1
 
-augroup sql_files
-    autocmd!
-    autocmd FileType sql setlocal commentstring=--\ %s
-augroup END
+"
+" Vim Syntax: Shell Script
+"
+let g:sh_fold_enabled = 1  " enable folding (filetype=sh)
 
-" ~~~~~~~~~~~~~~~~~
-" Markdown Settings
-" ~~~~~~~~~~~~~~~~~
-augroup markdown_extras
-    autocmd!
-    autocmd FileType vimwiki setlocal formatoptions+=cq
-augroup END
+"
+" Vim Plugin: jshint2.vim
+"
+let jshint2_save = 1  " Run jshint when saving .js files
 
-augroup vimwiki_extras
-    autocmd!
-    autocmd BufRead,BufNewFile ~/vimwiki/* lcd ~/vimwiki
-augroup END
 
-augroup js_extras
+"
+" AutoCommands
+"
+augroup my_autocmds
     autocmd!
     autocmd FileType javascript setlocal sw=2 sts=2 ts=2 et
     autocmd FileType html setlocal sw=2 sts=2 ts=2 et
     autocmd FileType css setlocal sw=2 sts=2 ts=2 et
     autocmd FileType less setlocal sw=2 sts=2 ts=2 et
     autocmd FileType sass setlocal sw=2 sts=2 ts=2 et
-augroup END
-
-" ~~~~~~~~~~~~~
-" YAML Settings
-" ~~~~~~~~~~~~~
-augroup yaml_settings
-    autocmd!
+    autocmd FileType json setlocal sw=2 sts=2 ts=2 et " Only indent by 2 spaces
+    autocmd FileType sql setlocal commentstring=--\ %s
+    autocmd FileType vimwiki setlocal formatoptions+=cq
+    autocmd BufRead,BufNewFile ~/vimwiki/* lcd ~/vimwiki
+    autocmd BufRead,BufNewFile ~/Dropbox/Wiki/* lcd ~/Dropbox/Wiki
     autocmd FileType yaml setlocal sw=2 sts=2 ts=2 et " Only indent by 2 spaces
 augroup END
 
-" ~~ Load Local Settings ~~
+"
+" Vim <Leader> Setup
+"
+let mapleader="\<Space>"
+
+nnoremap <Leader>vm :e ~/Dropbox/Wiki/index.md<CR>
+nnoremap <Leader>be :BufExplorer<CR>
+nnoremap <Leader>bs :CtrlPBuffer<CR>
+nnoremap <Leader>bd :bd<Return>
+nnoremap <Leader>ff :CtrlP<CR>
+nnoremap <Leader>fs :w<Return>
+
+" Notes:
+" - <Leader>bs overrides a binding set by BufExplorer. I've added the force
+"   option (!) because I don't like seeing the warnings.
+
+"
+" Vim <LocalLeader> Setup
+"
+let maplocaleader=","
+
+" This makes sure that we don't lose the functionality of the ',' keystroke
+" because we want to use it as a leader. We now just have to hit ',,' to get
+" the same functionality. It's less convenient, but if you don't use ',' much,
+" then it could be a worthwhile trade-off. (Note: this assumes that
+" `maplocaleader` is set to ",")
+nnoremap <LocalLeader>, :normal ,<CR>:<CR>
+
+"-------------------------------------------------------------------------------
+" Remove Trailing Whitespace
+"
+" Source: http://vim.wikia.com/wiki/Remove_unwanted_spaces
+function! RemoveTrailingWhitespace() range
+    if !&binary && &filetype != "diff"
+        execute a:firstline . "," . a:lastline . "s/\\s\\+$//ge"
+    endif
+    echomsg "trailing whitespace removed"
+endfunction
+
+command -bar -nargs=0 -range=% RemoveTrailingWhitespace <line1>,<line2>call RemoveTrailingWhitespace()
+
+nnoremap <Leader>rw :RemoveTrailingWhitespace<CR>
+vnoremap <Leader>rw :RemoveTrailingWhitespace<CR>
+
+"-------------------------------------------------------------------------------
+" Local Settings
+"
 let g:local_vimrc = expand("$HOME/.vim/local.vim")
+
 if filereadable(g:local_vimrc)
     execute "source" . g:local_vimrc
 endif
 
-
-let g:pymode_rope = 0
