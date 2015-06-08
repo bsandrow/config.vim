@@ -48,6 +48,19 @@ let g:ctrlp_custom_ignore = { 'dir': '\v[\/](node_modules)$',
 let g:bufExplorerDisableDefaultKeyMapping = 1
 Plug 'jlanzarotta/bufexplorer'
 
+"
+" LustyExplorer -- A Ruby-based fuzzy file finder. Superceded by CtrlP
+"
+"Plug 'sjbach/lusty'
+
+"
+" nose.vim -- A Compiler definition for Python's `nose` testing library.
+"
+"Plug 'vim-scripts/nose.vim'
+
+" Included in Vim since 6.0
+"Plug 'vim-scripts/matchit.zip'
+
 " ======================================
 "             Colorschemes
 " ======================================
@@ -123,18 +136,17 @@ Plug 'vim-scripts/moin.vim'
 Plug 'groenewege/vim-less'
 Plug 'nono/vim-handlebars'
 Plug 'vim-scripts/nginx.vim'
+
+"
+" python-syntax -- Enhanced version of Python syntax highlighting
+"
 "Plug 'hdima/python-syntax'
-"Plug 'vim-scripts/nose.vim'
-"Plug 'sjbach/lusty'
 
 " Plug 'vim-scripts/perl-support.vim'
 " let g:Perl_Support_Root_Dir = $HOME . "/.vim/plugged/perl-support"
 " let g:Perl_NoKeyMappings=0 " turn off key mappings
 " TODO disable the .pm file template
 " TODO disable the stupid { bracket delay
-
-" Included in Vim since 6.0
-"Plug 'vim-scripts/matchit.zip'
 
 call plug#end()
 
@@ -190,7 +202,7 @@ let java_ignore_javadoc = 1
 let java_highlight_functions = 1
 let java_allow_cpp_keywords = 1 " don't warn when using c++ keywords
 let groovy_allow_cpp_keywords = 1 " don't warn when using c++ keywords in groovy
-let g:sh_fold_enabled = 1  " enable folding (filetype=sh)
+let sh_fold_enabled = 1  " enable folding (filetype=sh)
 
 " =======================================
 "            Keybindings
@@ -238,11 +250,12 @@ augroup my_autocmds
     autocmd FileType less setlocal sw=2 sts=2 ts=2 et
     autocmd FileType sass setlocal sw=2 sts=2 ts=2 et
     autocmd FileType json setlocal sw=2 sts=2 ts=2 et " Only indent by 2 spaces
+    autocmd FileType yaml setlocal sw=2 sts=2 ts=2 et " Only indent by 2 spaces
     autocmd FileType sql setlocal commentstring=--\ %s
     autocmd FileType vimwiki setlocal formatoptions+=cq
     autocmd BufRead,BufNewFile ~/vimwiki/* lcd ~/vimwiki
     autocmd BufRead,BufNewFile ~/Dropbox/Wiki/* lcd ~/Dropbox/Wiki
-    autocmd FileType yaml setlocal sw=2 sts=2 ts=2 et " Only indent by 2 spaces
+    autocmd BufRead,BufNewFile *.md,*.markdown setlocal spell
 augroup END
 
 
