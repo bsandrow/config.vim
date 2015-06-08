@@ -1,3 +1,14 @@
+" My vimrc
+
+" Todo:
+" - Look through vim 'snippets' plugins and decide on one to use.
+" - Figure out the difference between enhanced netrw and nerdtree
+" - Better comments/docs for various plugin includes
+
+" =======================================
+"            Initialization
+" =======================================
+
 let mapleader = "\<Space>"
 let maplocalleader = ","
 
@@ -17,23 +28,45 @@ call plug#begin('~/.vim/plugged')
 "                Plugins
 " =======================================
 
-Plug 'danro/rename.vim'
-Plug 'rking/ag.vim'
-Plug 'mileszs/ack.vim'
+"
+" file-line
+"
+" Jumps to {line} in {file} when opening {file}:{line} from
+" the command-line.
+"
 Plug 'bogado/file-line'
-Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
+
+Plug 'danro/rename.vim'
+
+"
+" ag.vim -- `:Ag` wraps `ag` file-search command
+"
+Plug 'rking/ag.vim'
+
+"
+" ack.vim -- `:Ack` wraps `ack` file-search command
+"
+Plug 'mileszs/ack.vim'
+
+"
+" vim-gnupg -- Transparent wrapper around GnuPG command-line
+"
+Plug 'jamessan/vim-gnupg'
+
+"
+" NERDTree -- File browser ( or project browser) plugin
+"
+Plug 'scrooloose/nerdtree'
 
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
-Plug 'scrooloose/nerdtree'
-Plug 'jamessan/vim-gnupg'
 Plug 'vim-pandoc/vim-pandoc'
 
 Plug 'klen/python-mode', { 'for': 'python' }
 let g:pymode_rope = 0
 
-Plug 'Shutnik/jshint2.vim'
+Plug 'Shutnik/jshint2.vim', { 'for': 'javascript' }
 let jshint2_save = 1  " Run jshint when saving .js files
 
 Plug 'vimwiki/vimwiki'
@@ -102,6 +135,11 @@ Plug 'endel/vim-github-colorscheme'
 " ======================================
 "             Syntax Files
 " ======================================
+
+"
+" vim-javascript-syntax -- Enhanced javascript syntax file for Vim
+"
+Plug 'jelera/vim-javascript-syntax'
 
 " JSON
 "
@@ -216,12 +254,14 @@ let sh_fold_enabled = 1  " enable folding (filetype=sh)
 "
 nnoremap Y y$
 
-nnoremap <Leader>vm :e ~/Dropbox/Wiki/index.md<CR>
+nnoremap <Leader>wo :edit ~/Dropbox/Wiki/index.md<CR>
 nnoremap <Leader>be :BufExplorer<CR>
 nnoremap <Leader>bs :CtrlPBuffer<CR>
-nnoremap <Leader>bd :bd<Return>
-nnoremap <Leader>ff :CtrlP<CR>
-nnoremap <Leader>fs :w<Return>
+nnoremap <Leader>bd :bdelete<Return>
+nnoremap <Leader>ff :CtrlP<Return>
+nnoremap <Leader>fs :write<Return>
+nnoremap <Leader>vo :edit ~/.vimrc<Return>
+nnoremap <Leader>vs :source $MYVIMRC<Return>:echomsg "vimrc (" . $MYVIMRC . ") reloaded"<Return>
 
 "
 " Remove trailing whitespace.
@@ -249,6 +289,7 @@ augroup my_autocmds
     autocmd FileType css setlocal sw=2 sts=2 ts=2 et
     autocmd FileType less setlocal sw=2 sts=2 ts=2 et
     autocmd FileType sass setlocal sw=2 sts=2 ts=2 et
+    autocmd FileType scss setlocal sw=2 sts=2 ts=2 et
     autocmd FileType json setlocal sw=2 sts=2 ts=2 et " Only indent by 2 spaces
     autocmd FileType yaml setlocal sw=2 sts=2 ts=2 et " Only indent by 2 spaces
     autocmd FileType sql setlocal commentstring=--\ %s
@@ -280,8 +321,7 @@ function! RemoveTrailingWhitespace() range
     echomsg "trailing whitespace removed"
 endfunction
 
-command -bar -nargs=0 -range=% RemoveTrailingWhitespace <line1>,<line2>call RemoveTrailingWhitespace()
-
+command! -bar -nargs=0 -range=% RemoveTrailingWhitespace <line1>,<line2>call RemoveTrailingWhitespace()
 
 " =======================================
 "            Finalize
