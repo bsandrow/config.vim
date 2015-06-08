@@ -1,8 +1,5 @@
 #!/usr/bin/env zsh
 
-PREFIX=$1
-PREFIX=${PREFIX:-$HOME}
-
 function abspath()
 {
     case "$(uname)" in
@@ -15,17 +12,18 @@ function abspath()
     esac
 }
 
-CONF_DIR="${0%/*}"
-FILES=(vim vimrc gvimrc)
+CONFDIR="${0%/*}"
+PREFIX="${1:-$HOME}"
+VIM_PLUG_REMOTE='git@github.com:junegunn/vim-plug.git'
+VIM_AUTOLOAD_DIR=$PREFIX/.vim/autoload
 
-for item in $FILES; do
-    src="${CONF_DIR}/${item}"
-    dest="${PREFIX}/.${item}"
-    ln -v -sfn "$(abspath "$src")" "$dest"
+ln -v -sfn "$(abspath "$CONFDIR/vimrc")" "$PREFIX/.vimrc"
+ln -v -sfn "$(abspath "$CONFDIR/gvimrc")" "$PREFIX/.gvimrc"
 
-    if [[ ! -d vim/bundle/vundle ]]; then
-        git clone https://github.com/gmarik/vundle.git vim/bundle/vundle
-    fi
-done
+if [[ ! -d $VIM_AUTOLOAD_DIR ]]; then
+    mkdir -p $VIM_AUTOLOAD_DIR
+    git clone --depth=1 $VIM_PLUG_REMOTE $VIM_AUTOLOAD_DIR
+    # git clone $VIM_PLUG_REMOTE $VIM_AUTOLOAD_DIR
+fi
 
 # vim:set ft=zsh:
