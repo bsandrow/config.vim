@@ -2,3 +2,5 @@ vim/bundle/*
 vim/.VimballRecord
 vim/.netrwhist
 vim/local.vim
+*.swp
+.swp
