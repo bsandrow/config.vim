@@ -225,6 +225,7 @@ set ruler
 set laststatus=2
 set list
 set listchars=tab:»·,trail:·
+set fillchars="fold: "
 
 " =======================================
 "           Syntax Settings
