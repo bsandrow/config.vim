@@ -28,6 +28,17 @@ call plug#begin('~/.vim/plugged')
 "                Plugins
 " =======================================
 
+" vim-airline
+"
+Plug 'bling/vim-airline'
+let g:airline_powerline_fonts=1
+let g:airline_theme='solarized'
+let g:airline#extensions#tabline#enabled = 1
+" let g:airline_theme='powerlineish'
+" let g:airline_left_sep=''
+" let g:airline_right_sep=''
+" let g:airline_section_z=''
+
 "
 " file-line
 "
@@ -42,6 +53,11 @@ Plug 'danro/rename.vim'
 " ag.vim -- `:Ag` wraps `ag` file-search command
 "
 Plug 'rking/ag.vim'
+
+" Expand / wrap hashes etc.
+Plug 'AndrewRadev/splitjoin.vim'
+" nmap sj :SplitjoinSplit<CR>
+" nmap sk :SplitjoinJoin<CR>
 
 "
 " ack.vim -- `:Ack` wraps `ack` file-search command
@@ -300,6 +316,15 @@ augroup my_autocmds
     autocmd BufRead,BufNewFile *.md,*.markdown setlocal spell
 augroup END
 
+" =======================================
+"              Fonts
+" =======================================
+
+if has('gui_macvim')
+    set guifont=Menlo\ for\ Powerline:h11,Menlo:h11,Monaco:h11,Consolas:h11
+elseif has('gui_gtk2')
+    set guifont=Consolas\ 10,Liberation\ Mono\ 9,Terminus\ 9
+endif
 
 " =======================================
 "            Functions
