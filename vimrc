@@ -34,25 +34,11 @@ Plug 'bling/vim-airline'
 let g:airline_powerline_fonts=1
 let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline_theme='powerlineish'
-" let g:airline_left_sep=''
-" let g:airline_right_sep=''
-" let g:airline_section_z=''
-
-"
-" file-line
-"
-" Jumps to {line} in {file} when opening {file}:{line} from
-" the command-line.
-"
-Plug 'bogado/file-line'
 
 Plug 'danro/rename.vim'
-
-"
-" ag.vim -- `:Ag` wraps `ag` file-search command
-"
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'rking/ag.vim'
+Plug 'mileszs/ack.vim'
 
 " Expand / wrap hashes etc.
 Plug 'AndrewRadev/splitjoin.vim'
@@ -60,55 +46,65 @@ Plug 'AndrewRadev/splitjoin.vim'
 " nmap sk :SplitjoinJoin<CR>
 
 "
-" ack.vim -- `:Ack` wraps `ack` file-search command
+" Jump to {line} when opening a file like: "filename:{line}"
 "
-Plug 'mileszs/ack.vim'
+Plug 'bogado/file-line'
 
 "
-" vim-gnupg -- Transparent wrapper around GnuPG command-line
+" GnuPG Wrapper
 "
 Plug 'jamessan/vim-gnupg'
 
 "
-" NERDTree -- File browser ( or project browser) plugin
+" File Browser / Project Drawer
 "
 Plug 'scrooloose/nerdtree'
 
-Plug 'tpope/vim-surround'
+"
+" Git Wrapper
+"
 Plug 'tpope/vim-fugitive'
+cabbrev git <c-r>=(getcmdtype() == ':' && getcmdpos() == 1 ? 'Git' : 'git')<CR>
+
+Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'vim-pandoc/vim-pandoc'
 
+"
+" Turn Vim into a Python IDE. Inspired by Emacs' python-mode
+"
 Plug 'klen/python-mode', { 'for': 'python' }
-let g:pymode_rope = 0
+let g:pymode_rope = 0 " rope performance is crap
 
+"
+" jshint linting for JavaScript
+"
 Plug 'Shutnik/jshint2.vim', { 'for': 'javascript' }
 let jshint2_save = 1  " Run jshint when saving .js files
 
+"
+" Wiki Plugin for Vim
+"
 Plug 'vimwiki/vimwiki'
-let g:vimwiki_list = [ {'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'} ]
+let g:vimwiki_list = [ {
+            \'path': '~/vimwiki',
+            \'syntax': 'markdown',
+            \'ext': '.md'
+            \} ]
 
+"
+" Fuzzy file finder for Vim
+"
 Plug 'kien/ctrlp.vim'
-let g:ctrlp_custom_ignore = { 'dir': '\v[\/](node_modules)$',
-                            \ 'file': '\v\.(pyc)$' }
+let g:ctrlp_custom_ignore = {
+    \'dir': '\v[\/](node_modules)$',
+    \'file': '\v\.(pyc)$'
+    \}
 
 " Disable the keybindings because the defaults conflict with my personal
 " bindings, and cause warning messages about conflicts.
 let g:bufExplorerDisableDefaultKeyMapping = 1
 Plug 'jlanzarotta/bufexplorer'
-
-"
-" LustyExplorer -- A Ruby-based fuzzy file finder. Superceded by CtrlP
-"
-"Plug 'sjbach/lusty'
-
-"
-" nose.vim -- A Compiler definition for Python's `nose` testing library.
-"
-"Plug 'vim-scripts/nose.vim'
-
-" Included in Vim since 6.0
-"Plug 'vim-scripts/matchit.zip'
 
 " ======================================
 "             Colorschemes
