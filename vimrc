@@ -339,7 +339,8 @@ augroup END
 " =======================================
 
 if has('gui_macvim')
-    set guifont=Menlo\ for\ Powerline:h11,Menlo:h11,Monaco:h11,Consolas:h11
+    " set guifont=Menlo\ for\ Powerline:h11,Menlo:h11,Monaco:h11,Consolas:h11
+    set guifont=Droid\ Sans\ Mono\ for\ Powerline:h10
 elseif has('gui_gtk2')
     set guifont=Consolas\ 10,Liberation\ Mono\ 9,Terminus\ 9
 endif
