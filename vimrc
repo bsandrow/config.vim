@@ -236,6 +236,7 @@ let loaded_matchparen = 1
 "            Vim Settings
 " =======================================
 
+set mouse=a " Turn on XTerm mouse stuff
 set expandtab tabstop=4 softtabstop=4 shiftwidth=4
 set hidden
 set modelines=5
