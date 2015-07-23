@@ -285,6 +285,9 @@ let sh_fold_enabled = 1  " enable folding (filetype=sh)
 nnoremap Y y$
 
 nnoremap <Leader>wo :edit ~/Dropbox/Wiki/index.md<CR>
+nnoremap <Leader>wa :edit ~/Dropbox/Wiki/Agenda/index.md<CR>
+nnoremap <Leader>wrl :edit ~/Dropbox/Wiki/Agenda/ReadingList.md<CR>
+" nnoremap <Leader>ws :CtrlP ~/Dropbox/Wiki<CR>
 nnoremap <Leader>be :BufExplorer<CR>
 nnoremap <Leader>bs :CtrlPBuffer<CR>
 nnoremap <Leader>bd :bdelete<Return>
@@ -326,6 +329,7 @@ augroup my_autocmds
     autocmd FileType vimwiki setlocal formatoptions+=cq
     autocmd BufRead,BufNewFile ~/vimwiki/* lcd ~/vimwiki
     autocmd BufRead,BufNewFile ~/Dropbox/Wiki/* lcd ~/Dropbox/Wiki
+    autocmd BufRead,BufNewFile ~/Dropbox/Wiki/Agenda/* lcd ~/Dropbox/Wiki/Agenda
     autocmd BufRead,BufNewFile *.md,*.markdown setlocal spell
 augroup END
 
