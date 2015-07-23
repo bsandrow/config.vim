@@ -288,6 +288,7 @@ nnoremap <Leader>wo :edit ~/Dropbox/Wiki/index.md<CR>
 nnoremap <Leader>wa :edit ~/Dropbox/Wiki/Agenda/index.md<CR>
 nnoremap <Leader>wrl :edit ~/Dropbox/Wiki/Agenda/ReadingList.md<CR>
 " nnoremap <Leader>ws :CtrlP ~/Dropbox/Wiki<CR>
+nnoremap <Leader>ps :CtrlPRoot<CR>
 nnoremap <Leader>be :BufExplorer<CR>
 nnoremap <Leader>bs :CtrlPBuffer<CR>
 nnoremap <Leader>bd :bdelete<Return>
