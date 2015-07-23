@@ -40,8 +40,11 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
+" TODO Troubleshoot why this keeps telling me that the "python server" has
+" crashed.
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+
 Plug 'danro/rename.vim'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'rking/ag.vim'
 Plug 'mileszs/ack.vim'
 
