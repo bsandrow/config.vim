@@ -86,6 +86,7 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'klen/python-mode', { 'for': 'python' }
 let g:pymode_folding = 1 " turn on pymode folding
 let g:pymode_rope = 0 " rope performance is crap
+let g:pymode_lint_ignore = "E731"
 
 "
 " jshint linting for JavaScript
