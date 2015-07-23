@@ -45,8 +45,10 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 
 Plug 'danro/rename.vim'
-Plug 'rking/ag.vim'
 Plug 'mileszs/ack.vim'
+
+Plug 'rking/ag.vim'
+cabbrev ag <c-r>=(getcmdtype() == ':' && getcmdpos() == 1 ? 'Ag' : 'ag')<CR>
 
 " Expand / wrap hashes etc.
 Plug 'AndrewRadev/splitjoin.vim'
