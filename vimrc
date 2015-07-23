@@ -377,7 +377,9 @@ command! -bar -nargs=0 -range=% RemoveTrailingWhitespace <line1>,<line2>call Rem
 "
 " Set the colorscheme
 "
+"colorscheme solarized | set bg=dark
 colorscheme solarized | set bg=light
+" colorscheme base16-ocean
 
 "
 " Load local Vim config
