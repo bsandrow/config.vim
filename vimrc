@@ -237,6 +237,7 @@ let loaded_matchparen = 1
 " =======================================
 
 set mouse=a " Turn on XTerm mouse stuff
+set backspace=indent,eol,start
 set expandtab tabstop=4 softtabstop=4 shiftwidth=4
 set hidden
 set modelines=5
