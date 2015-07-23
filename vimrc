@@ -198,9 +198,14 @@ Plug 'nono/vim-handlebars'
 Plug 'vim-scripts/nginx.vim'
 
 "
-" python-syntax -- Enhanced version of Python syntax highlighting
+" Python Syntax:
+"   These are two modules that attempt to enhance Python syntax highlighting /
+"   folding. I've currently disabled them in favour of just using
+"   pymode's built-in enhancements as these two don't seem to bring anything
+"   extra to the table. I'm just keeping them here for posterity.
 "
-"Plug 'hdima/python-syntax'
+" Plug 'hdima/python-syntax'
+" Plug 'tmhedberg/SimpylFold'
 
 " Plug 'vim-scripts/perl-support.vim'
 " let g:Perl_Support_Root_Dir = $HOME . "/.vim/plugged/perl-support"
