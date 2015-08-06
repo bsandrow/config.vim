@@ -300,6 +300,13 @@ nnoremap <Leader>vo :edit ~/.vimrc<Return>
 nnoremap <Leader>vs :source $MYVIMRC<Return>:echomsg "vimrc (" . $MYVIMRC . ") reloaded"<Return>
 
 "
+" Colorscheme Related Shortcuts
+"
+nnoremap <Leader>cd :set bg=dark<CR>
+nnoremap <Leader>cl :set bg=light<CR>
+nnoremap <Leader>cs :colorscheme solarized<CR>
+
+"
 " Remove trailing whitespace.
 "
 nnoremap <Leader>rw :RemoveTrailingWhitespace<CR>
