@@ -83,9 +83,12 @@ Plug 'vim-pandoc/vim-pandoc'
 "
 " Turn Vim into a Python IDE. Inspired by Emacs' python-mode
 "
+let g:python_line_length = 100
 let g:pymode_folding = 1 " turn on pymode folding
 let g:pymode_rope = 0 " rope performance is crap
 let g:pymode_lint_ignore = "E731"
+let g:pymode_options_colorcolumn = 1 " doesn't seem to work
+let g:pymode_options_max_line_length = g:python_line_length
 let g:pymode_lint_checkers = ['pyflakes', 'pep8']
 Plug 'klen/python-mode', { 'for': 'python' }
 
@@ -338,6 +341,7 @@ augroup my_autocmds
     autocmd FileType yaml setlocal sw=2 sts=2 ts=2 et " Only indent by 2 spaces
     autocmd FileType sql setlocal commentstring=--\ %s
     autocmd FileType vimwiki setlocal formatoptions+=cq
+    autocmd FileType python let &colorcolumn = g:python_line_length
     autocmd BufRead,BufNewFile ~/vimwiki/* lcd ~/vimwiki
     autocmd BufRead,BufNewFile ~/Dropbox/Wiki/* lcd ~/Dropbox/Wiki
     autocmd BufRead,BufNewFile ~/Dropbox/Wiki/Agenda/* lcd ~/Dropbox/Wiki/Agenda
