@@ -68,6 +68,7 @@ Plug 'jamessan/vim-gnupg'
 "
 " File Browser / Project Drawer
 "
+let NERDTreeIgnore = ['\.pyc$']
 Plug 'scrooloose/nerdtree'
 
 "
