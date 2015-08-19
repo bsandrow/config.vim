@@ -350,6 +350,7 @@ augroup my_autocmds
     autocmd FileType sql setlocal commentstring=--\ %s
     autocmd FileType vimwiki setlocal formatoptions+=cq
     autocmd FileType python let &colorcolumn = g:python_line_length
+    autocmd FileType python let &textwidth = g:python_line_length
     autocmd BufRead,BufNewFile ~/vimwiki/* lcd ~/vimwiki
     autocmd BufRead,BufNewFile ~/Dropbox/Wiki/* lcd ~/Dropbox/Wiki
     autocmd BufRead,BufNewFile ~/Dropbox/Wiki/Agenda/* lcd ~/Dropbox/Wiki/Agenda
