@@ -307,6 +307,11 @@ nnoremap <Leader>vo :edit ~/.vimrc<Return>
 nnoremap <Leader>vs :source $MYVIMRC<Return>:echomsg "vimrc (" . $MYVIMRC . ") reloaded"<Return>
 
 "
+" 'Disable' Ex Mode
+"
+nnoremap Q <Nop>
+
+"
 " Colorscheme Related Shortcuts
 "
 nnoremap <Leader>cd :set bg=dark<CR>
