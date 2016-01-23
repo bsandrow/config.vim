@@ -28,6 +28,9 @@ call plug#begin('~/.vim/plugged')
 "                Plugins
 " =======================================
 
+" MatchTag
+Plug 'gregsexton/MatchTag'
+
 " vim-airline
 "
 Plug 'bling/vim-airline'
