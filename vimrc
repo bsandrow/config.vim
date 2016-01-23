@@ -90,7 +90,10 @@ cabbrev git <c-r>=(getcmdtype() == ':' && getcmdpos() == 1 ? 'Git' : 'git')<CR>
 
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'vim-pandoc/vim-pandoc'
+
+" Don't let pandoc turn on the foldcolumn value.
+" let g:pandoc#folding#fdc = 0
+" Plug 'vim-pandoc/vim-pandoc'
 
 "
 " Turn Vim into a Python IDE. Inspired by Emacs' python-mode
