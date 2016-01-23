@@ -79,6 +79,7 @@ Plug 'jamessan/vim-gnupg'
 " File Browser / Project Drawer
 "
 let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeSortOrder = ['*', '\.swp$',  '\.bak$', '\~$']
 Plug 'scrooloose/nerdtree'
 
 "
