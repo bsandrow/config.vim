@@ -358,10 +358,17 @@ nnoremap <LocalLeader>, :normal ,<CR>:<CR>
 "            Autocommands
 " =======================================
 
+function MyMarkdownFoldText()
+    return getline(v:foldstart)
+    " let line = getline(v:foldstart)
+    " let sub = substitute(line, '^#\+ *', '', '')
+    " return v:folddashes . ': ' . sub
+endfunction
+
 augroup my_autocmds
     autocmd!
     autocmd FileType javascript setlocal sw=2 sts=2 ts=2 et
-    autocmd FileType html setlocal sw=2 sts=2 ts=2 et
+    autocmd FileType html,htmldjango,htmljinja setlocal sw=2 sts=2 ts=2 et
     autocmd FileType css setlocal sw=2 sts=2 ts=2 et
     autocmd FileType less setlocal sw=2 sts=2 ts=2 et
     autocmd FileType sass setlocal sw=2 sts=2 ts=2 et
