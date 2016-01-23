@@ -31,6 +31,14 @@ call plug#begin('~/.vim/plugged')
 " MatchTag
 Plug 'gregsexton/MatchTag'
 
+" vim-speeddating
+"
+Plug 'tpope/vim-speeddating'
+
+" vim-orgmode
+"
+Plug 'jceb/vim-orgmode'
+
 " vim-airline
 "
 Plug 'bling/vim-airline'
