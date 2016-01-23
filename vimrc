@@ -385,7 +385,10 @@ augroup my_autocmds
     autocmd BufRead,BufNewFile ~/vimwiki/* lcd ~/vimwiki
     autocmd BufRead,BufNewFile ~/Dropbox/Wiki/* lcd ~/Dropbox/Wiki
     autocmd BufRead,BufNewFile ~/Dropbox/Wiki/Agenda/* lcd ~/Dropbox/Wiki/Agenda
-    autocmd BufRead,BufNewFile *.md,*.markdown setlocal spell
+    autocmd BufRead,BufNewFile *.md,*.markdown set ft=markdown
+    autocmd BufRead,BufNewFile ~/Dropbox/Agenda/* lcd ~/Dropbox/Agenda
+    " autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+    " autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary" && len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))) | q | endif
 augroup END
 
 " =======================================
@@ -430,8 +433,10 @@ command! -bar -nargs=0 -range=% RemoveTrailingWhitespace <line1>,<line2>call Rem
 " Set the colorscheme
 "
 "colorscheme solarized | set bg=dark
-colorscheme solarized | set bg=light
+" colorscheme solarized | set bg=light
 " colorscheme base16-ocean
+" colorscheme darcula
+" colorscheme molokai
 
 "
 " Load local Vim config
