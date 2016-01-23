@@ -314,8 +314,6 @@ nnoremap Y y$
 
 nnoremap <Leader>ao :edit ~/Dropbox/Agenda/index.org<CR>
 nnoremap <Leader>wo :edit ~/Dropbox/Wiki/index.md<CR>
-nnoremap <Leader>wa :edit ~/Dropbox/Wiki/Agenda/index.md<CR>
-nnoremap <Leader>wrl :edit ~/Dropbox/Wiki/Agenda/ReadingList.md<CR>
 " nnoremap <Leader>ws :CtrlP ~/Dropbox/Wiki<CR>
 nnoremap <Leader>ps :CtrlPRoot<CR>
 nnoremap <Leader>pd :NERDTreeToggle<Return>
