@@ -207,9 +207,9 @@ Plug 'estin/htmljinja'
 "
 " The plasticboy repo seems more often updated, but the tpope one is extended
 " by the vim-flavored-markdown plugin, so let's use the tpope one for now.
-"Plug 'plasticboy/vim-markdown'
-Plug 'tpope/vim-markdown'
-Plug 'jtratner/vim-flavored-markdown'
+Plug 'plasticboy/vim-markdown'
+"Plug 'tpope/vim-markdown'
+"Plug 'jtratner/vim-flavored-markdown'
 
 " The puppetlabs Vim syntax file looks like it hasn't been updated since Jacob
 " left the company (last commit is by Jacob in 2011), so I've disabled this in
