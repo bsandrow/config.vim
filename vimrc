@@ -100,6 +100,7 @@ Plug 'tpope/vim-commentary'
 "
 let g:python_line_length = 100
 let g:pymode_folding = 1 " turn on pymode folding
+let g:pymode_fold_docstrings = 0 " turn off docstring folding
 let g:pymode_rope = 0 " rope performance is crap
 let g:pymode_lint_ignore = "E731"
 let g:pymode_options_colorcolumn = 1 " doesn't seem to work
