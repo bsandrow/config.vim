@@ -312,6 +312,7 @@ let sh_fold_enabled = 1  " enable folding (filetype=sh)
 "
 nnoremap Y y$
 
+nnoremap <Leader>ao :edit ~/Dropbox/Agenda/index.org<CR>
 nnoremap <Leader>wo :edit ~/Dropbox/Wiki/index.md<CR>
 nnoremap <Leader>wa :edit ~/Dropbox/Wiki/Agenda/index.md<CR>
 nnoremap <Leader>wrl :edit ~/Dropbox/Wiki/Agenda/ReadingList.md<CR>
