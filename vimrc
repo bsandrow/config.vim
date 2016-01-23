@@ -325,6 +325,8 @@ nnoremap <Leader>fs :write<Return>
 nnoremap <Leader>vo :edit ~/.vimrc<Return>
 nnoremap <Leader>vs :source $MYVIMRC<Return>:echomsg "vimrc (" . $MYVIMRC . ") reloaded"<Return>
 
+nnoremap <Leader>jc :edit ~/Dropbox/Journal/`date +\%Y-\%m-\%d`.md<Return>
+
 "
 " 'Disable' Ex Mode
 "
