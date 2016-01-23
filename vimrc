@@ -181,6 +181,9 @@ Plug 'blueshirts/darcula'
 "             Syntax Files
 " ======================================
 
+" Dockerfile.vim -- Syntax for Dockerfiles
+Plug 'ekalinin/Dockerfile.vim'
+
 "
 " vim-javascript-syntax -- Enhanced javascript syntax file for Vim
 "
