@@ -281,6 +281,8 @@ set laststatus=2
 set list
 set listchars=tab:»·,trail:·
 set fillchars="fold: "
+set guioptions=gm  " Disable most GUI stuff
+set foldcolumn=0 " Disable the fold 'gutter'
 
 " =======================================
 "           Syntax Settings
