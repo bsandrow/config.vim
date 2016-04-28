@@ -28,6 +28,12 @@ call plug#begin('~/.vim/plugged')
 "                Plugins
 " =======================================
 
+" UltiSnips
+Plug 'SirVer/ultisnips'
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+
 " MatchTag
 Plug 'gregsexton/MatchTag'
 
