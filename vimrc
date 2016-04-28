@@ -121,7 +121,7 @@ let g:pymode_rope = 0 " rope performance is crap
 let g:pymode_lint_ignore = "E731"
 let g:pymode_options_colorcolumn = 1 " doesn't seem to work
 let g:pymode_options_max_line_length = g:python_line_length
-let g:pymode_lint_checkers = ['pyflakes', 'pep8']
+let g:pymode_lint_checkers = ['pep8', 'pyflakes']
 Plug 'klen/python-mode', { 'for': 'python' }
 
 "
