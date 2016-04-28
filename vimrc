@@ -388,7 +388,7 @@ nnoremap <LocalLeader>, :normal ,<CR>:<CR>
 "            Autocommands
 " =======================================
 
-function MyMarkdownFoldText()
+function! MyMarkdownFoldText()
     return getline(v:foldstart)
     " let line = getline(v:foldstart)
     " let sub = substitute(line, '^#\+ *', '', '')
