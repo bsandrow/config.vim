@@ -338,15 +338,29 @@ nnoremap <Leader>bs :CtrlPBuffer<CR>
 nnoremap <Leader>bd :bdelete<Return>
 nnoremap <Leader>ff :CtrlP<Return>
 nnoremap <Leader>fs :write<Return>
+nnoremap <Leader>fe :NERDTreeFind<Return>
 nnoremap <Leader>vo :edit ~/.vimrc<Return>
 nnoremap <Leader>vs :source $MYVIMRC<Return>:echomsg "vimrc (" . $MYVIMRC . ") reloaded"<Return>
 
 nnoremap <Leader>jc :edit ~/Dropbox/Journal/`date +\%Y-\%m-\%d`.md<Return>
 
 "
+" Window Shortcuts
+"
+nnoremap <Leader>wcc :ccl<Return>:lcl<Return>
+
+"
 " 'Disable' Ex Mode
 "
 nnoremap Q <Nop>
+
+"
+" Git Shortcuts
+"
+nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gr :Gremove<CR>
+nnoremap <Leader>gl :Glog<CR>
+nnoremap <Leader>gs :Gstatus<CR>
 
 "
 " Colorscheme Related Shortcuts
