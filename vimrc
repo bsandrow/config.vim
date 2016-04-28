@@ -61,8 +61,18 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 
 Plug 'danro/rename.vim'
-Plug 'mileszs/ack.vim'
 
+"
+" ack-grep support via :Ack command. The cabbrev allows me to type ':ack' and
+" have it auto-corrected to ':Ack'.
+"
+Plug 'mileszs/ack.vim'
+cabbrev ack <c-r>=(getcmdtype() == ':' && getcmdpos() == 1 ? 'Ack' : 'ack')<CR>
+
+"
+" The Silver Searcher (e.g. 'ag') support via :Ag command. The cabbrev allows
+" me to type ':ag' and have it auto-corrected to ':Ag'.
+"
 Plug 'rking/ag.vim'
 cabbrev ag <c-r>=(getcmdtype() == ':' && getcmdpos() == 1 ? 'Ag' : 'ag')<CR>
 
