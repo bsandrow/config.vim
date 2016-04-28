@@ -472,6 +472,8 @@ command! -bar -nargs=0 -range=% RemoveTrailingWhitespace <line1>,<line2>call Rem
 "            Finalize
 " =======================================
 
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard | grep -v "\\.\\(png\\|jpg\\|svg\\|ico\\|gif\\|zip\\)$"']
+
 "
 " Set the colorscheme
 "
