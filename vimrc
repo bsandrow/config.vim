@@ -397,26 +397,39 @@ endfunction
 
 augroup my_autocmds
     autocmd!
+
+    " Indentation settings
     autocmd FileType javascript setlocal sw=2 sts=2 ts=2 et
     autocmd FileType html,htmldjango,htmljinja setlocal sw=2 sts=2 ts=2 et
     autocmd FileType css setlocal sw=2 sts=2 ts=2 et
     autocmd FileType less setlocal sw=2 sts=2 ts=2 et
     autocmd FileType sass setlocal sw=2 sts=2 ts=2 et
     autocmd FileType scss setlocal sw=2 sts=2 ts=2 et
-    autocmd FileType json setlocal sw=2 sts=2 ts=2 et " Only indent by 2 spaces
-    autocmd FileType yaml setlocal sw=2 sts=2 ts=2 et " Only indent by 2 spaces
+    autocmd FileType json setlocal sw=2 sts=2 ts=2 et
+    autocmd FileType yaml setlocal sw=2 sts=2 ts=2 et
+
+    " Fix SQL commentstring value
     autocmd FileType sql setlocal commentstring=--\ %s
-    autocmd FileType vimwiki setlocal formatoptions+=cq
+
+    " Python settings
     autocmd FileType python let &colorcolumn = g:python_line_length
     autocmd FileType python let &textwidth = g:python_line_length
+
+    " Markdown settings
+    autocmd BufRead,BufNewFile *.md,*.markdown set ft=markdown
     autocmd FileType markdown setlocal foldlevel=1
     autocmd FileType markdown setlocal spell
     autocmd FileType markdown setlocal foldtext=MyMarkdownFoldText()
+
+    autocmd FileType vimwiki setlocal formatoptions+=cq
     autocmd BufRead,BufNewFile ~/vimwiki/* lcd ~/vimwiki
     autocmd BufRead,BufNewFile ~/Dropbox/Wiki/* lcd ~/Dropbox/Wiki
     autocmd BufRead,BufNewFile ~/Dropbox/Wiki/Agenda/* lcd ~/Dropbox/Wiki/Agenda
-    autocmd BufRead,BufNewFile *.md,*.markdown set ft=markdown
     autocmd BufRead,BufNewFile ~/Dropbox/Agenda/* lcd ~/Dropbox/Agenda
+
+    " Procfile is a YAML-based format
+    autocmd BufRead,BufNewFile Procfile set filetype=yaml
+
     " autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
     " autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary" && len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))) | q | endif
 augroup END
